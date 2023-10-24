@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab #2</title>
+    <link href="cal.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <img id="drink" src="https://picsum.photos/id/326/150/150" style="float:right" />
+    <div id="dummy" style="margin:5px">
+        <img src="https://picsum.photos/id/319/150/150" /> Dummy
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item" style="flex-grow: 3;">3</div>
+        <div class="flex-item">4</div>
+    </div>
+    
+    <div class = "container my-4">
+        <div class="row">
+            <div class="col-12 card">
+                Card 1
+            </div>
+            <div class="col-12 card">
+                Card 2
+            </div>
+            <div class="col-12 card">
+                Card 3
+            </div>
+            <div class="col-12 card">
+                Card 4
+            </div>
+        </div>
+
+    </div>
+
+    <div class = "container my-4">
+        <div class="row">
+            <div class="col-sm-6 card">
+                Card 1
+            </div>
+            <div class="col-sm-6 card">
+                Card 2
+            </div>
+            <div class="col-sm-6 card">
+                Card 3
+            </div>
+            <div class="col-sm-6 card">
+                Card 4
+            </div>
+        </div>
+
+    </div>
+
+    <div class = "container my-4">
+        <div class="row">
+            <div class="col-md-3 card">
+                Card 1
+            </div>
+            <div class="col-md-3 card">
+                Card 2
+            </div>
+            <div class="col-md-3 card">
+                Card 3
+            </div>
+            <div class="col-md-3 card">
+                Card 4
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="ratio ratio-1x1">
+                <img class="img-fluid img-thumbnail" style="object-fit:cover"
+                    src="https://picsum.photos/seed/picsum1/500/500">
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="ratio" style="--bs-aspect-ratio: 133%;">
+                <img class="img-fluid img-thumbnail" style="object-fit:cover"
+                    src="https://picsum.photos/seed/picsum5/500/1500" />
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="ratio ratio-4x3">
+                <img class="img-fluid img-thumbnail" style="object-fit:cover"
+                    src="https://picsum.photos/seed/picsum2/1500/500" />
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="ratio ratio-1x1">
+                <img class="img-fluid img-thumbnail" style="object-fit:cover"
+                    src="https://picsum.photos/seed/picsum4/500/500" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div class="row">
+            <button class="col btn btn-primary" onclick="btn1Clicked(this)">
+                I'm Button 1, Click me!
+            </button>
+            <button class="col btn btn-danger" onclick="btn2Clicked(this)">
+                I'm Button 2, Click me!
+            </button>
+            <button class="col btn btn-warning" onclick="btn3Clicked()">
+                I'm Button 3, Click me!
+            </button>
+            <button class="col btn btn-outline-info" onclick="btn4Clicked()">
+                I'm Button 4, Click me!
+            </button>
+            <button class="col btn btn-outline-dark" onclick="btn5Clicked()">
+                I'm Button 5, Click me!
+            </button>
+        </div>
+    </div>
+    
+
+    <script>
+        function btn1Clicked(elem){
+            console.log("Console output: Button 1 clicked");
+            elem.innerHTML = "Don't click me! ";
+        }
+
+        function btn2Clicked(elem){
+            elem.style.display = "none";
+            elem.parent.list.add("btn-group-lg");
+        }
+
+        function btn3Clicked(elem){
+            var drink = document.getElementById("drink");
+
+            if(drink.style.float == "left"){
+                drink.style.float = "right";
+        }else{
+            drink.style.float = "left";
+        }}
+
+        function btn4Clicked(){
+            var figures = document.querySelectorAll(".ratio-1x1, .ration-16x9");
+            alert(figures.length);
+
+            for(var figures of figures){
+                figures.classList.toggle("ratio-1x1");
+                figures.classList.toggle("ratio-16x9");
+
+            }
+        };
+        
+        function btn5Clicked(){
+            var dynamicCode = '<table>';
+            
+            var teamMember = ["Martin", "Ryan"];
+
+            for(var m of teamMember){
+                dynamicCode += "<tr><td>" + m + "<td><tr>";
+            }
+
+            document.querySelector("#dummy").innerHTML = dynamicCode + "</table>"
+        }
+    </script>
+</body>
+
+</html>
