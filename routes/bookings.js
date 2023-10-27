@@ -40,7 +40,8 @@ router.post('/', async function (req, res) {
   const db = await connectToDB();
   try {
       req.body.numTickets = parseInt(req.body.numTickets);
-      req.body.terms = req.body.terms == "on";
+      //req.body.terms = req.body.terms == "on";
+      req.body.terms = req.body.terms? true : false
       req.body.createdAt = new Date();
       req.body.modifiedAt = new Date();
 
