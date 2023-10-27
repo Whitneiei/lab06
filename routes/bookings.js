@@ -72,7 +72,7 @@ router.get('/:id', async function (req, res) {
   }
 });
 
-
+// update single booking
 router.put('/:id', async function (req, res) {
   const db = await connectToDB();
   try {
