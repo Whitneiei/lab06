@@ -80,6 +80,7 @@ router.put('/:id', async function (req, res) {
       req.body.terms = req.body.terms == "on";
       req.body.superhero = req.body.superhero || "";
       req.body.modifiedAt = new Date();
+      delete req.body._id
 
       let result = await db.collection("bookings").updateOne({ _id: new ObjectId(req.params.id) }, { $set: req.body });
 
